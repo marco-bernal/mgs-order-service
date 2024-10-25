@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=order-service-db
+      - POSTGRES_USER=service
+      - POSTGRES_PASSWORD=order
+    ports:
+      - "5432:5432"
