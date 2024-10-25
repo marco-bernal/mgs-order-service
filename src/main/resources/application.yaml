@@ -1,0 +1,24 @@
+server:
+  port : 6060
+
+spring:
+  application:
+    name: order-service
+
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/order-service-db
+    username: service
+    password: order
+  jpa:
+    show-sql: true
+
+  flyway:
+    locations: classpath:db/migration
+
+management:
+  endpoints:
+    web:
+      base-path: "/api/management"
+      exposure:
+        include: "health,info"
