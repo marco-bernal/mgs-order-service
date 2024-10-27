@@ -8,8 +8,8 @@ spring:
   datasource:
     driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/order-service-db
-    username: service
-    password: order
+    username: order-service-user
+    password: order-service-password
   jpa:
     show-sql: true
 
