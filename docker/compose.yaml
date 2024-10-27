@@ -3,7 +3,7 @@ services:
     image: postgres
     environment:
       - POSTGRES_DB=order-service-db
-      - POSTGRES_USER=service
-      - POSTGRES_PASSWORD=order
+      - POSTGRES_USER=order-service-user
+      - POSTGRES_PASSWORD=order-service-password
     ports:
       - "5432:5432"
