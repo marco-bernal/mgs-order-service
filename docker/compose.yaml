@@ -1,9 +1,31 @@
+# Main "infra" config. Move it to a dedicated msg-infra repo when migrating to K8s.
 services:
-  db:
+  order-service-db:
     image: postgres
     environment:
       - POSTGRES_DB=order-service-db
+      - PGPORT=5432
       - POSTGRES_USER=order-service-user
       - POSTGRES_PASSWORD=order-service-password
     ports:
-      - "5432:5432"
+      - "25432:5432"
+
+  product-service-db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=product-service-db
+      - PGPORT=5433
+      - POSTGRES_USER=product-service-user
+      - POSTGRES_PASSWORD=product-service-password
+    ports:
+      - "25433:5433"
+
+  receipt-service-db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=receipt-service-db
+      - PGPORT=5434
+      - POSTGRES_USER=receipt-service-user
+      - POSTGRES_PASSWORD=receipt-service-password
+    ports:
+      - "25434:5434"
